@@ -4,12 +4,16 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "lato", sans-serif;
     background-image: url('../img/fondo3.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: #33251F;
+}
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+    
 }
 
 
