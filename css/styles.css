@@ -17,9 +17,7 @@ h1, h2, h3 {
 }
 
 
-/* =========================
-   HEADER
-   ========================= */
+/* HEADER */
 
 header {
     background-color: #7C5653;
@@ -44,9 +42,7 @@ header p {
 }
 
 
-/* =========================
-   MENU
-   ========================= */
+/* MENU */
 
 nav {
     margin-top: 15px;
@@ -64,9 +60,7 @@ nav a:hover {
 }
 
 
-/* =========================
-   CONTENIDO PRINCIPAL
-   ========================= */
+/* CONTENIDO PRINCIPAL */
 
 main {
     max-width: 1400px;
@@ -85,9 +79,7 @@ section > h2 {
 }
 
 
-/* =========================
-   PRIMERA SECCIÓN
-   ========================= */
+/* PRIMERA SECCIÓN */
 
 main section:first-child {
     width: 100vw;
@@ -105,9 +97,7 @@ main section:first-child p {
 }
 
 
-/* =========================
-   CATEGORÍAS
-   ========================= */
+/* CATEGORÍAS */
 
 .categorias {
     display: grid;
@@ -120,7 +110,7 @@ main section:first-child p {
 }
 
 
-/* Imágenes de las categorías */
+/* IMAGENES DE LAS CATEGORIAS */
 
 .categorias article img {
     width: 100%;
@@ -133,9 +123,7 @@ main section:first-child p {
 }
 
 
-/* =========================
-   PRODUCTOS DESTACADOS
-   ========================= */
+/* PRODUCTOS DESTACADOS */
 
 .productos-destacados {
     display: grid;
@@ -148,9 +136,7 @@ main section:first-child p {
 }
 
 
-/* =========================
-   ARTÍCULOS
-   ========================= */
+/* ARTÍCULOS */
 
 article {
     background-color: transparent;
@@ -170,9 +156,7 @@ article p {
 }
 
 
-/* =========================
-   FOOTER
-   ========================= */
+/* FOOTER */
 
 footer {
     background-color: #7C5653;
@@ -204,9 +188,7 @@ footer img {
 }
 
 
-/* =========================
-   SLIDER
-   ========================= */
+/* SLIDER */
 
 .slider {
     width: 100%;
@@ -227,7 +209,7 @@ footer img {
 }
 
 
-/* Animación del slider */
+/* ANIMACION DEL SLIDER */
 
 @keyframes cambiar {
 
@@ -269,9 +251,7 @@ footer img {
 }
 
 
-/* =========================
-   PÁGINA NOSOTROS
-   ========================= */
+/* PÁGINA NOSOTROS */
 
 .nosotros-bloque {
     display: grid;
@@ -306,9 +286,7 @@ footer img {
 }
 
 
-/* =========================
-   PÁGINA PRODUCTOS
-   ========================= */
+/* PÁGINA PRODUCTOS */
 
 .producto-categoria {
     display: grid;
@@ -347,10 +325,7 @@ footer img {
 }
 
 
-/* =========================
-   RESPONSIVE
-   TABLETS
-   ========================= */
+/* RESPONSIVE TABLETS */
 
 @media (max-width: 1024px) {
 
@@ -379,10 +354,7 @@ footer img {
 }
 
 
-/* =========================
-   RESPONSIVE
-   CELULARES
-   ========================= */
+/* RESPONSIVE CELULARES */
 
 @media (max-width: 768px) {
 
