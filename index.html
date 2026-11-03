@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,10 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Bootstrap 5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/styles.css">
 
     <title>Dulce Aroma</title>
 
+    <!-- Fuentes personalizadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -16,24 +24,66 @@
 
 <body>
 
+    <!-- HEADER -->
     <header>
 
         <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
 
         <h1>Los mejores productos de Panadería y Pastelería</h1>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="productos.html">Productos</a>
-            <a href="pedidos.html">Pedidos</a>
-            <a href="contacto.html">Contacto</a>
+        <!-- MENÚ RESPONSIVE BOOTSTRAP -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <div class="container-fluid justify-content-start">
+
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú de navegación">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="menuPrincipal">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">Productos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="pedidos.html">Pedidos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
         </nav>
 
     </header>
 
     <main>
 
+        <!-- SLIDER -->
         <section class="slider">
 
             <div class="imagenes">
@@ -47,93 +97,130 @@
 
         </section>
 
+        <!-- CATEGORÍAS CON BOOTSTRAP -->
         <section class="categorias">
 
             <h2>Nuestras categorías</h2>
 
-            <article>
+            <div class="row g-4">
 
-                <h3>Panadería</h3>
+                <article class="col-12 col-md-6 col-lg-3">
 
-                <img src="img/CATEGORIAS/categoria1.webp" alt="Productos de panadería">
+                    <h3>Panadería</h3>
 
-                <p>Pan artesanal y productos recién horneados.</p>
+                    <img src="img/CATEGORIAS/categoria1.webp"
+                        alt="Productos de panadería">
 
-            </article>
+                    <p>Pan artesanal y productos recién horneados.</p>
 
-            <article>
+                </article>
 
-                <h3>Pastelería</h3>
+                <article class="col-12 col-md-6 col-lg-3">
 
-                <img src="img/CATEGORIAS/categoria2.webp" alt="Productos de pastelería">
+                    <h3>Pastelería</h3>
 
-                <p>Tortas y pasteles preparados para cada ocasión.</p>
+                    <img src="img/CATEGORIAS/categoria2.webp"
+                        alt="Productos de pastelería">
 
-            </article>
+                    <p>Tortas y pasteles preparados para cada ocasión.</p>
 
-            <article>
+                </article>
 
-                <h3>Postres</h3>
+                <article class="col-12 col-md-6 col-lg-3">
 
-                <img src="img/CATEGORIAS/categoria3.webp" alt="Postres de Dulce Aroma">
+                    <h3>Postres</h3>
 
-                <p>Deliciosos postres para disfrutar en cualquier momento.</p>
+                    <img src="img/CATEGORIAS/categoria3.webp"
+                        alt="Postres de Dulce Aroma">
 
-            </article>
+                    <p>Deliciosos postres para disfrutar en cualquier momento.</p>
 
-            <article>
+                </article>
 
-                <h3>Bocaditos</h3>
+                <article class="col-12 col-md-6 col-lg-3">
 
-                <img src="img/CATEGORIAS/categoria4.webp" alt="Bocaditos de Dulce Aroma">
+                    <h3>Bocaditos</h3>
 
-                <p>Pequeños sabores ideales para compartir.</p>
+                    <img src="img/CATEGORIAS/categoria4.webp"
+                        alt="Bocaditos de Dulce Aroma">
 
-            </article>
+                    <p>Pequeños sabores ideales para compartir.</p>
+
+                </article>
+
+            </div>
 
         </section>
 
     </main>
 
+    <!-- FOOTER CON BOOTSTRAP -->
     <footer>
 
-        <div>
+        <div class="container-fluid">
 
-            <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
+            <div class="row g-4">
 
-        </div>
+                <!-- LOGOTIPO -->
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-        <div>
+                    <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
 
-            <p>Panadería y Pastelería</p>
+                </div>
 
-            <p>Elaboramos productos frescos <br> para compartir en momentos especiales.</p>
+                <!-- DESCRIPCIÓN -->
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-        </div>
+                    <p>Panadería y Pastelería</p>
 
-        <div>
+                    <p>Elaboramos productos frescos <br>
+                        para compartir en momentos especiales.</p>
 
-            <h3>Horario de Atención</h3>
+                </div>
 
-            <p>Lunes a Sábado: 7:00 AM - 8:00 PM</p>
+                <!-- HORARIOS -->
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-            <p>Domingo: 8:00 AM - 2:00 PM</p>
+                    <h3>Horario de Atención</h3>
 
-        </div>
+                    <p>Lunes a Sábado: 7:00 AM - 8:00 PM</p>
 
-        <div>
+                    <p>Domingo: 8:00 AM - 2:00 PM</p>
 
-            <h3>Central de Pedidos</h3>
+                </div>
 
-            <p>Teléfono: <a href="tel:+51777777777">777-777-777</a></p>
+                <!-- CONTACTO -->
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-            <p>WhatsApp: <a href="https://wa.me/51777777777" target="_blank" rel="noopener noreferrer">777-777-777</a></p>
+                    <h3>Central de Pedidos</h3>
 
-            <p><a href="mailto:pedidos@dulcearoma.com">pedidos@dulcearoma.com</a></p>
+                    <p>Teléfono:
+                        <a href="tel:+51777777777">777-777-777</a>
+                    </p>
+
+                    <p>WhatsApp:
+                        <a href="https://wa.me/51777777777"
+                            target="_blank" rel="noopener noreferrer">777-777-777</a>
+                    </p>
+
+                    <p>
+                        <a href="mailto:pedidos@dulcearoma.com">
+                            pedidos@dulcearoma.com
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
     </footer>
+
+    <!-- Bootstrap 5.3.8 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

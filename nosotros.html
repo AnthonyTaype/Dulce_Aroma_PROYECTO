@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,143 +6,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nosotros</title>
+    <title>Nosotros | Dulce Aroma</title>
 
+    <!-- Bootstrap 5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- Fuentes personalizadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
 
         <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
 
         <h1>Panadería y Pastelería</h1>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="productos.html">Productos</a>
-            <a href="pedidos.html">Pedidos</a>
-            <a href="contacto.html">Contacto</a>
+        <!-- MENÚ RESPONSIVE BOOTSTRAP -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <div class="container-fluid justify-content-start">
+
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú de navegación">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center"
+                    id="menuPrincipal">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="nosotros.html"
+                                aria-current="page">Nosotros</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">Productos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="pedidos.html">Pedidos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
         </nav>
 
     </header>
 
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
 
         <h1>Nosotros</h1>
 
+        <!-- QUIÉNES SOMOS -->
         <section class="nosotros-bloque">
 
-            <div class="nosotros-texto">
+            <div class="row align-items-center g-4">
 
-                <h2>¿Quiénes somos?</h2>
+                <div class="col-12 col-md-6 nosotros-texto">
 
-                <p>
-                    Somos Dulce Aroma, una panadería y pastelería
-                    dedicada a la elaboración de productos frescos
-                    y de calidad para compartir en momentos especiales.
-                </p>
+                    <h2>¿Quiénes somos?</h2>
 
-            </div>
+                    <p>
+                        Somos Dulce Aroma, una panadería y pastelería
+                        dedicada a la elaboración de productos frescos
+                        y de calidad para compartir en momentos especiales.
+                    </p>
 
-            <div class="nosotros-imagen">
+                </div>
 
-                <img src="img/NOSOTROS/nosotros-texto.webp"
-                alt="Productos de Dulce Aroma">
+                <div class="col-12 col-md-6 nosotros-imagen">
+
+                    <img src="img/NOSOTROS/nosotros-texto.webp"
+                        alt="Productos de Dulce Aroma">
+
+                </div>
 
             </div>
 
         </section>
 
+        <!-- HISTORIA -->
         <section class="nosotros-bloque">
 
-            <div class="nosotros-imagen">
+            <div class="row align-items-center g-4">
 
-                <img src="img/NOSOTROS/quienes-somos.webp"
-                alt="Historia de Dulce Aroma">
+                <div class="col-12 col-md-6 nosotros-imagen">
 
-            </div>
+                    <img src="img/NOSOTROS/quienes-somos.webp"
+                        alt="Historia de Dulce Aroma">
 
-            <div class="nosotros-texto">
+                </div>
 
-                <h2>Nuestra Historia</h2>
+                <div class="col-12 col-md-6 nosotros-texto">
 
-                <p>
-                    Dulce Aroma nació con la idea de ofrecer productos de
-                    panadería y pastelería elaborados con dedicación,
-                    buscando brindar a nuestros clientes sabores agradables
-                    y una experiencia especial.
-                </p>
+                    <h2>Nuestra Historia</h2>
+
+                    <p>
+                        Dulce Aroma nació con la idea de ofrecer productos de
+                        panadería y pastelería elaborados con dedicación,
+                        buscando brindar a nuestros clientes sabores agradables
+                        y una experiencia especial.
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
 
+        <!-- MISIÓN -->
         <section class="nosotros-bloque">
 
-            <div class="nosotros-texto">
+            <div class="row align-items-center g-4">
 
-                <h2>Nuestra Misión</h2>
+                <div class="col-12 col-md-6 nosotros-texto">
 
-                <p>
-                    Ofrecer productos frescos y deliciosos, preparados con
-                    dedicación y utilizando ingredientes de calidad para
-                    satisfacer a nuestros clientes.
-                </p>
+                    <h2>Nuestra Misión</h2>
 
-            </div>
+                    <p>
+                        Ofrecer productos frescos y deliciosos, preparados con
+                        dedicación y utilizando ingredientes de calidad para
+                        satisfacer a nuestros clientes.
+                    </p>
 
-            <div class="nosotros-imagen">
+                </div>
 
-                <img src="img/NOSOTROS/mision.webp"
-                alt="Misión de Dulce Aroma">
+                <div class="col-12 col-md-6 nosotros-imagen">
+
+                    <img src="img/NOSOTROS/mision.webp"
+                        alt="Misión de Dulce Aroma">
+
+                </div>
 
             </div>
 
         </section>
 
+        <!-- VISIÓN -->
         <section class="nosotros-bloque">
 
-            <div class="nosotros-imagen">
+            <div class="row align-items-center g-4">
 
-                <img src="img/NOSOTROS/vision.webp"
-                alt="Visión de Dulce Aroma">
+                <div class="col-12 col-md-6 nosotros-imagen">
 
-            </div>
+                    <img src="img/NOSOTROS/vision.webp"
+                        alt="Visión de Dulce Aroma">
 
-            <div class="nosotros-texto">
+                </div>
 
-                <h2>Nuestra Visión</h2>
+                <div class="col-12 col-md-6 nosotros-texto">
 
-                <p>
-                    Ser una panadería y pastelería reconocida por la calidad
-                    de nuestros productos, nuestro buen servicio y la
-                    satisfacción de nuestros clientes.
-                </p>
+                    <h2>Nuestra Visión</h2>
+
+                    <p>
+                        Ser una panadería y pastelería reconocida por la calidad
+                        de nuestros productos, nuestro buen servicio y la
+                        satisfacción de nuestros clientes.
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
 
+        <!-- VALORES -->
         <section class="nosotros-bloque">
 
-            <div class="nosotros-texto">
+            <div class="row align-items-center g-4">
 
-                <h2>Nuestros Valores</h2>
+                <div class="col-12 nosotros-texto">
 
-                <ul>
-                    <li>Calidad</li>
-                    <li>Responsabilidad</li>
-                    <li>Compromiso</li>
-                    <li>Creatividad</li>
-                    <li>Atención al cliente</li>
-                </ul>
+                    <h2>Nuestros Valores</h2>
+
+                    <ul>
+                        <li>Calidad</li>
+                        <li>Responsabilidad</li>
+                        <li>Compromiso</li>
+                        <li>Creatividad</li>
+                        <li>Atención al cliente</li>
+                    </ul>
+
+                </div>
 
             </div>
 
@@ -149,52 +227,74 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
 
-        <div>
+        <div class="container-fluid">
 
-            <img src="img/logo.webp"
-            alt="Logotipo de Dulce Aroma">
+            <div class="row g-4">
 
-        </div>
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-        <div>
+                    <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
 
-            <h2>Dulce Aroma</h2>
+                </div>
 
-            <p>Panadería y Pastelería</p>
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-            <p>
-                Elaboramos productos frescos
-                <br>
-                para compartir en momentos especiales.
-            </p>
+                    <h2>Dulce Aroma</h2>
 
-        </div>
+                    <p>Panadería y Pastelería</p>
 
-        <div>
+                    <p>
+                        Elaboramos productos frescos
+                        <br>
+                        para compartir en momentos especiales.
+                    </p>
 
-            <h2>Horario de Atención</h2>
+                </div>
 
-            <p>Lunes a Sábado: 7:00 AM - 8:00 PM</p>
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-            <p>Domingo: 8:00 AM - 2:00 PM</p>
+                    <h2>Horario de Atención</h2>
 
-        </div>
+                    <p>Lunes a Sábado: 7:00 AM - 8:00 PM</p>
 
-        <div>
+                    <p>Domingo: 8:00 AM - 2:00 PM</p>
 
-            <h2>Central de Pedidos</h2>
+                </div>
 
-            <p>Teléfono: <a href="tel:+51777777777">777-777-777</a></p>
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-            <p>WhatsApp: <a href="https://wa.me/51777777777" target="_blank" rel="noopener noreferrer">777-777-777</a></p>
+                    <h2>Central de Pedidos</h2>
 
-            <p><a href="mailto:pedidos@dulcearoma.com">pedidos@dulcearoma.com</a></p>
+                    <p>
+                        Teléfono:
+                        <a href="tel:+51777777777">777-777-777</a>
+                    </p>
+
+                    <p>
+                        WhatsApp:
+                        <a href="https://wa.me/51777777777"
+                            target="_blank" rel="noopener noreferrer">777-777-777</a>
+                    </p>
+
+                    <p>
+                        <a href="mailto:pedidos@dulcearoma.com">
+                            pedidos@dulcearoma.com
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
     </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -11,9 +12,9 @@ body {
     background-attachment: fixed;
     color: #33251F;
 }
+
 h1, h2, h3 {
     font-family: "Playfair Display", serif;
-    
 }
 
 
@@ -110,14 +111,13 @@ main section:first-child p {
 }
 
 
-/* IMAGENES DE LAS CATEGORIAS */
+/* IMÁGENES DE LAS CATEGORÍAS */
 
 .categorias article img {
     width: 100%;
     height: 280px;
     object-fit: cover;
     display: block;
-
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
 }
@@ -162,15 +162,13 @@ footer {
     background-color: #7C5653;
     color: #FFFFFF;
     padding: 50px 40px;
-
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     gap: 60px;
 }
 
-footer section {
+footer div {
     margin-bottom: 0;
 }
 
@@ -209,7 +207,7 @@ footer img {
 }
 
 
-/* ANIMACION DEL SLIDER */
+/* ANIMACIÓN DEL SLIDER */
 
 @keyframes cambiar {
 
@@ -289,10 +287,9 @@ footer img {
 /* PÁGINA PRODUCTOS */
 
 .producto-categoria {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 60px;
+    /* Bootstrap controla la distribución de columnas */
+    display: block;
+
     max-width: 1200px;
     margin: 0 auto 70px;
     padding: 30px;
@@ -317,9 +314,11 @@ footer img {
 }
 
 .producto-imagen img {
+    display: block;
     width: 100%;
-    height: 350px;
-    object-fit: cover;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
 }
@@ -350,7 +349,6 @@ footer img {
     footer {
         gap: 30px;
     }
-
 }
 
 
@@ -465,22 +463,20 @@ footer img {
     /* PRODUCTOS */
 
     .producto-categoria {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        display: block;
         padding: 20px;
         margin-bottom: 50px;
     }
 
     .producto-texto {
-        order: 1;
-    }
-
-    .producto-imagen {
-        order: 2;
+        text-align: left;
     }
 
     .producto-imagen img {
-        height: 300px;
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
     }
 
 
@@ -493,12 +489,11 @@ footer img {
         gap: 30px;
     }
 
-    footer section {
+    footer div {
         width: 100%;
     }
 
     footer img {
         width: 120px;
     }
-
 }

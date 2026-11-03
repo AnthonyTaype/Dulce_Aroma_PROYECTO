@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,186 +6,284 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Productos</title>
+    <title>Productos | Dulce Aroma</title>
 
+    <!-- Bootstrap 5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- Fuentes personalizadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
 
         <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
 
         <h1>Panadería y Pastelería</h1>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="productos.html">Productos</a>
-            <a href="pedidos.html">Pedidos</a>
-            <a href="contacto.html">Contacto</a>
+        <!-- MENÚ RESPONSIVE BOOTSTRAP -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <div class="container-fluid justify-content-start">
+
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú de navegación">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center"
+                    id="menuPrincipal">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="productos.html"
+                                aria-current="page">Productos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="pedidos.html">Pedidos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
         </nav>
 
     </header>
 
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
 
-        <h1>Nuestros Productos</h1>
+        <div class="container-fluid">
 
-        <p>
-            En Dulce Aroma encontrarás una variedad de productos
-            elaborados con ingredientes de calidad y mucho cariño.
-        </p>
+            <h1>Nuestros Productos</h1>
 
-        <section class="producto-categoria">
+            <p class="text-center">
+                En Dulce Aroma encontrarás una variedad de productos
+                elaborados con ingredientes de calidad y mucho cariño.
+            </p>
 
-            <div class="producto-texto">
+            <!-- PANADERÍA -->
+            <section class="producto-categoria">
 
-                <h2>Panadería</h2>
+                <div class="row align-items-center g-4">
 
-                <ul>
-                    <li>Pan francés</li>
-                    <li>Pan integral</li>
-                    <li>Pan de yema</li>
-                    <li>Pan con queso</li>
-                </ul>
+                    <div class="col-12 col-md-6 producto-texto">
 
-            </div>
+                        <h2>Panadería</h2>
 
-            <div class="producto-imagen">
+                        <ul>
+                            <li>Pan francés</li>
+                            <li>Pan integral</li>
+                            <li>Pan de yema</li>
+                            <li>Pan con queso</li>
+                        </ul>
 
-                <img src="img/PRODUCTOS/productos1.webp"
-                alt="Variedad de panes">
+                    </div>
 
-            </div>
+                    <div class="col-12 col-md-6 producto-imagen">
 
-        </section>
+                        <img src="img/PRODUCTOS/productos1.webp"
+                            alt="Variedad de panes">
 
-        <section class="producto-categoria">
+                    </div>
 
-            <div class="producto-texto">
+                </div>
 
-                <h2>Pastelería</h2>
+            </section>
 
-                <ul>
-                    <li>Torta de chocolate</li>
-                    <li>Torta de vainilla</li>
-                    <li>Cheesecake</li>
-                    <li>Pastel de frutas</li>
-                </ul>
+            <!-- PASTELERÍA -->
+            <section class="producto-categoria">
 
-            </div>
+                <div class="row align-items-center g-4">
 
-            <div class="producto-imagen">
+                    <div class="col-12 col-md-6 producto-texto">
 
-                <img src="img/PRODUCTOS/productos2.webp"
-                alt="Variedad de tortas">
+                        <h2>Pastelería</h2>
 
-            </div>
+                        <ul>
+                            <li>Torta de chocolate</li>
+                            <li>Torta de vainilla</li>
+                            <li>Cheesecake</li>
+                            <li>Pastel de frutas</li>
+                        </ul>
 
-        </section>
+                    </div>
 
-        <section class="producto-categoria">
+                    <div class="col-12 col-md-6 producto-imagen">
 
-            <div class="producto-texto">
+                        <img src="img/PRODUCTOS/productos2.webp"
+                            alt="Variedad de tortas">
 
-                <h2>Productos Dulces</h2>
+                    </div>
 
-                <ul>
-                    <li>Pionono</li>
-                    <li>Alfajores</li>
-                    <li>Brownies</li>
-                    <li>Cupcakes</li>
-                </ul>
+                </div>
 
-            </div>
+            </section>
 
-            <div class="producto-imagen">
+            <!-- PRODUCTOS DULCES -->
+            <section class="producto-categoria">
 
-                <img src="img/PRODUCTOS/productos3.webp"
-                alt="Pionono, alfajores, brownies y cupcakes">
+                <div class="row align-items-center g-4">
 
-            </div>
+                    <div class="col-12 col-md-6 producto-texto">
 
-        </section>
+                        <h2>Productos Dulces</h2>
 
-        <section class="producto-categoria">
+                        <ul>
+                            <li>Pionono</li>
+                            <li>Alfajores</li>
+                            <li>Brownies</li>
+                            <li>Cupcakes</li>
+                        </ul>
 
-            <div class="producto-texto">
+                    </div>
 
-                <h2>Productos Salados</h2>
+                    <div class="col-12 col-md-6 producto-imagen">
 
-                <ul>
-                    <li>Empanada de carne</li>
-                    <li>Empanada de pollo</li>
-                    <li>Empanada de queso</li>
-                    <li>Pastel de pollo</li>
-                </ul>
+                        <img src="img/PRODUCTOS/productos3.webp"
+                            alt="Pionono, alfajores, brownies y cupcakes">
 
-            </div>
+                    </div>
 
-            <div class="producto-imagen">
+                </div>
 
-                <img src="img/PRODUCTOS/productos4.webp"
-                alt="Empanadas y pastel de pollo">
+            </section>
 
-            </div>
+            <!-- PRODUCTOS SALADOS -->
+            <section class="producto-categoria">
 
-        </section>
+                <div class="row align-items-center g-4">
+
+                    <div class="col-12 col-md-6 producto-texto">
+
+                        <h2>Productos Salados</h2>
+
+                        <ul>
+                            <li>Empanada de carne</li>
+                            <li>Empanada de pollo</li>
+                            <li>Empanada de queso</li>
+                            <li>Pastel de pollo</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-12 col-md-6 producto-imagen">
+
+                        <img src="img/PRODUCTOS/productos4.webp"
+                            alt="Empanadas y pastel de pollo">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
 
-        <div>
+        <div class="container-fluid">
 
-            <img src="img/logo.webp"
-            alt="Logotipo de Dulce Aroma">
+            <div class="row g-4">
 
-        </div>
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-        <div>
+                    <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
 
-            <h2>Dulce Aroma</h2>
+                </div>
 
-            <p>Panadería y Pastelería</p>
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-            <p>
-                Elaboramos productos frescos
-                <br>
-                para compartir en momentos especiales.
-            </p>
+                    <h2>Dulce Aroma</h2>
 
-        </div>
+                    <p>Panadería y Pastelería</p>
 
-        <div>
+                    <p>
+                        Elaboramos productos frescos
+                        <br>
+                        para compartir en momentos especiales.
+                    </p>
 
-            <h2>Horario de Atención</h2>
+                </div>
 
-            <p>Lunes a Sábado: 7:00 AM - 8:00 PM</p>
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-            <p>Domingo: 8:00 AM - 2:00 PM</p>
+                    <h2>Horario de Atención</h2>
 
-        </div>
+                    <p>Lunes a Sábado: 7:00 AM - 8:00 PM</p>
 
-        <div>
+                    <p>Domingo: 8:00 AM - 2:00 PM</p>
 
-            <h2>Central de Pedidos</h2>
+                </div>
 
-            <p>Teléfono: <a href="tel:+51777777777">777-777-777</a></p>
+                <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-            <p>WhatsApp: <a href="https://wa.me/51777777777" target="_blank" rel="noopener noreferrer">777-777-777</a></p>
+                    <h2>Central de Pedidos</h2>
 
-            <p><a href="mailto:pedidos@dulcearoma.com">pedidos@dulcearoma.com</a></p>
+                    <p>
+                        Teléfono:
+                        <a href="tel:+51777777777">777-777-777</a>
+                    </p>
+
+                    <p>
+                        WhatsApp:
+                        <a href="https://wa.me/51777777777"
+                            target="_blank" rel="noopener noreferrer">777-777-777</a>
+                    </p>
+
+                    <p>
+                        <a href="mailto:pedidos@dulcearoma.com">
+                            pedidos@dulcearoma.com
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
     </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
