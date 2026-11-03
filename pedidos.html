@@ -4,121 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
+
     <link rel="stylesheet" href="css/styles.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
     <header>
-    <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
-    <h1>Panaderia y Pasteleria</h1>
-    <div>
+        <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
+        <h1>Panadería y Pastelería</h1>
+
         <nav>
-        <a href="index.html">Inicio</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="productos.html">Productos</a>
-        <a href="pedidos.html">Pedidos</a>
-        <a href="contacto.html">Contacto</a>
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="productos.html">Productos</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="contacto.html">Contacto</a>
         </nav>
-     </div>
-   
     </header>
-    
-<main>
 
-    <h1>Realiza tu Pedido</h1>
+    <main>
 
-    <section>
-        <h2>Datos del Cliente</h2>
+        <h1>Realiza tu pedido</h1>
 
-        <form>
-
-            <label for="nombre">Nombre completo:</label>
-            <input type="text" id="nombre" name="nombre">
-
-            <br><br>
-
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono">
-
-            <br><br>
-
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo">
-
-        </form>
-    </section>
-
-    <section>
-        <h2>Detalles del Pedido</h2>
-
-        <form>
-
-            <label for="producto">Producto:</label>
-            <select id="producto" name="producto">
-                <option value="">Selecciona un producto</option>
-                <option value="empanada">Empanada</option>
-                <option value="pionono">Pionono</option>
-                <option value="torta">Torta</option>
-                <option value="pastel">Pastel</option>
-                <option value="pan">Pan</option>
-            </select>
-
-            <br><br>
-
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad" min="1">
-
-            <br><br>
-
-            <label for="fecha">Fecha de entrega:</label>
-            <input type="date" id="fecha" name="fecha">
-
-            <br><br>
-
-            <label for="comentario">Comentarios del pedido:</label>
-            <br>
-            <textarea id="comentario" name="comentario" rows="5" cols="40"></textarea>
-
-            <br><br>
-
-            <button type="submit">Realizar Pedido</button>
-
-        </form>
-    </section>
-
-</main>
-
-
-
-
-   <footer>
         <section>
+
+            <h2>Datos del cliente</h2>
+
+            <form>
+
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre">
+
+                <br><br>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono">
+
+                <br><br>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo">
+
+            </form>
+
+        </section>
+
+        <section>
+
+            <h2>Detalles del pedido</h2>
+
+            <form>
+
+                <label for="producto">Producto:</label>
+
+                <select id="producto" name="producto">
+                    <option value="">Selecciona un producto</option>
+                    <option value="empanada">Empanada</option>
+                    <option value="pionono">Pionono</option>
+                    <option value="torta">Torta</option>
+                    <option value="pastel">Pastel</option>
+                    <option value="pan">Pan</option>
+                </select>
+
+                <br><br>
+
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" min="1">
+
+                <br><br>
+
+                <label for="fecha">Fecha de entrega:</label>
+                <input type="date" id="fecha" name="fecha">
+
+                <br><br>
+
+                <label for="comentario">Comentarios del pedido:</label>
+                <br>
+
+                <textarea id="comentario" name="comentario" rows="5" cols="40"></textarea>
+
+                <br><br>
+
+                <button type="submit">Realizar pedido</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div>
             <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
-        </section>
-        <section>
-            <h2>Dulce Aroma</h2>
-            <p>Panaderia y Pasteleria</p>
-            <p>Elaboramos productos frescos <br> para compartir en momentos especiales.</p>   
-       </section>
-        <section>
-            <h2>Horario de Atencion</h2>
-            <p>Lunes a Sabado :7:00 AM - 8:00 PM</p>
-            <p>Domingo :8:00 AM - 2:00 PM</p>
-        </section>
-         <section>
-            <h2>Central de Pedidos</h2>
-            <p>Telefono 777-777-777</p>
-            <p>Whatsapp 777-777-777</p>   
-            <p>pedidos@dulcearoma.com</p>
-       </section>
-    
-            
-    </footer>
-    
-</body>
+        </div>
 
+        <div>
+            <h2>Dulce Aroma</h2>
+            <p>Panadería y Pastelería</p>
+            <p>Elaboramos productos frescos para compartir en momentos especiales.</p>
+        </div>
+
+        <div>
+            <h2>Horario de Atención</h2>
+            <p>Lunes a sábado: 7:00 AM - 8:00 PM</p>
+            <p>Domingo: 8:00 AM - 2:00 PM</p>
+        </div>
+
+        <div>
+            <h2>Central de Pedidos</h2>
+            <p>Teléfono: <a href="tel:+51777777777">777-777-777</a></p>
+            <p>WhatsApp: <a href="https://wa.me/51777777777">777-777-777</a></p>
+            <p><a href="mailto:pedidos@dulcearoma.com">pedidos@dulcearoma.com</a></p>
+        </div>
+
+    </footer>
+
+</body>
 </html>
