@@ -1,24 +1,36 @@
 
+/* =========================================================
+   1. CONFIGURACIÓN GENERAL
+========================================================= */
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: "lato", sans-serif;
-    background-image: url('../img/fondo4.webp');
+    font-family: "Lato", sans-serif;
+    background-image: url("../img/fondo4.webp");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: #33251F;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: "Playfair Display", serif;
 }
 
+img {
+    max-width: 100%;
+}
 
-/* HEADER */
+
+/* =========================================================
+   2. HEADER
+========================================================= */
 
 header {
     background-color: #7C5653;
@@ -27,9 +39,13 @@ header {
     padding: 20px;
 }
 
-header img {
+header > img {
+    display: block;
     width: 150px;
     max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    animation: aparecerLogo 1s ease both;
 }
 
 header h1 {
@@ -37,209 +53,132 @@ header h1 {
     margin: 10px 0 5px;
 }
 
-header p {
-    margin: 0 0 20px;
-    color: #FFFFFF;
+
+/* =========================================================
+   3. MENÚ DE NAVEGACIÓN
+========================================================= */
+
+header .navbar {
+    margin-top: 15px;
+    padding: 8px 0;
 }
 
+header .navbar .container-fluid {
+    justify-content: flex-start;
+}
 
-/* MENU */
+header .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+}
 
-nav {
+header .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+header .navbar-nav {
+    gap: 20px;
+}
+
+header .navbar .nav-link {
+    color: #FFFFFF;
+    font-weight: 700;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+header .navbar .nav-link:hover,
+header .navbar .nav-link.active {
+    color: #F3E4D0;
+}
+
+/* Navegación HTML antigua */
+
+header nav:not(.navbar) {
     margin-top: 15px;
 }
 
-nav a {
+header nav:not(.navbar) a {
+    display: inline-block;
     color: #FFFFFF;
     text-decoration: none;
     margin: 0 20px;
-    font-weight: bold;
+    font-weight: 700;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
+header nav:not(.navbar) a:hover {
     color: #F3E4D0;
 }
 
 
-/* CONTENIDO PRINCIPAL */
+/* =========================================================
+   4. CONTENIDO PRINCIPAL
+========================================================= */
 
 main {
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 30px 40px;
 }
 
-section {
-    margin-bottom: 70px;
-}
-
-section > h2 {
+main > h1 {
     text-align: center;
-    color: #7C5653;
-    margin-bottom: 35px;
+    color: #33251F;
+    margin-bottom: 25px;
+    animation: aparecerTitulo 0.8s ease both;
+}
+
+main > p {
+    line-height: 1.6;
 }
 
 
-/* PRIMERA SECCIÓN */
-
-main section:first-child {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    text-align: center;
-}
-
-main section:first-child img {
-    width: 100%;
-    display: block;
-}
-
-main section:first-child p {
-    font-size: 18px;
-}
-
-
-/* CATEGORÍAS */
-
-.categorias {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
-}
-
-.categorias h2 {
-    grid-column: 1 / -1;
-}
-
-
-/* IMÁGENES DE LAS CATEGORÍAS */
-
-.categorias article img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    display: block;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
-}
-
-
-/* PRODUCTOS DESTACADOS */
-
-.productos-destacados {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
-}
-
-.productos-destacados h2 {
-    grid-column: 1 / -1;
-}
-
-
-/* ARTÍCULOS */
-
-article {
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-article h3 {
-    color: #7C5653;
-    margin-bottom: 20px;
-}
-
-article p {
-    margin-top: 18px;
-    line-height: 1.4;
-}
-
-
-/* FOOTER */
-
-footer {
-    background-color: #7C5653;
-    color: #FFFFFF;
-    padding: 50px 40px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 60px;
-}
-
-footer div {
-    margin-bottom: 0;
-}
-
-footer h2 {
-    color: #FFFFFF;
-}
-
-footer p {
-    margin: 8px 0;
-}
-
-footer img {
-    width: 150px;
-    height: auto;
-}
-
-
-/* SLIDER */
+/* =========================================================
+   5. SLIDER / CARRUSEL DE INICIO
+========================================================= */
 
 .slider {
-    width: 100%;
+    position: relative;
+    width: 100vw;
     height: 700px;
+    margin-left: calc(50% - 50vw);
+    margin-bottom: 70px;
     overflow: hidden;
 }
 
 .imagenes {
     display: flex;
     width: 400%;
+    height: 100%;
     animation: cambiar 20s infinite;
+    will-change: transform;
 }
 
 .imagenes img {
+    display: block;
+    flex: 0 0 25%;
     width: 25%;
-    height: 700px;
+    height: 100%;
     object-fit: cover;
 }
 
-
-/* ANIMACIÓN DEL SLIDER */
+/* Animación 1: movimiento automático del carrusel */
 
 @keyframes cambiar {
-
-    0% {
+    0%, 20% {
         transform: translateX(0);
     }
 
-    20% {
-        transform: translateX(0);
-    }
-
-    25% {
+    25%, 45% {
         transform: translateX(-25%);
     }
 
-    45% {
-        transform: translateX(-25%);
-    }
-
-    50% {
+    50%, 70% {
         transform: translateX(-50%);
     }
 
-    70% {
-        transform: translateX(-50%);
-    }
-
-    75% {
-        transform: translateX(-75%);
-    }
-
-    95% {
+    75%, 95% {
         transform: translateX(-75%);
     }
 
@@ -249,13 +188,79 @@ footer img {
 }
 
 
-/* PÁGINA NOSOTROS */
+/* =========================================================
+   6. CATEGORÍAS DE INICIO
+========================================================= */
+
+.categorias {
+    display: block;
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.categorias > h2 {
+    text-align: center;
+    color: #7C5653;
+    margin-bottom: 35px;
+}
+
+.categorias article {
+    background-color: transparent;
+    padding: 0 12px;
+    margin: 0;
+    text-align: center;
+    animation: aparecerCategoria 0.8s ease both;
+}
+
+.categorias article h3 {
+    color: #7C5653;
+    margin-bottom: 20px;
+}
+
+.categorias article img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
+    transition: transform 0.4s ease;
+}
+
+.categorias article img:hover {
+    transform: scale(1.04);
+}
+
+.categorias article p {
+    margin-top: 18px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   7. PRODUCTOS DESTACADOS
+========================================================= */
+
+.productos-destacados {
+    display: block;
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.productos-destacados > h2 {
+    text-align: center;
+    color: #7C5653;
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   8. PÁGINA NOSOTROS
+========================================================= */
 
 .nosotros-bloque {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 50px;
+    display: block;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto 70px;
     padding: 30px;
@@ -275,21 +280,28 @@ footer img {
     line-height: 1.6;
 }
 
+.nosotros-texto ul {
+    line-height: 1.8;
+}
+
 .nosotros-imagen img {
+    display: block;
     width: 100%;
     height: 350px;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+    animation: aparecerImagen 1s ease both;
 }
 
 
-/* PÁGINA PRODUCTOS */
+/* =========================================================
+   9. PÁGINA PRODUCTOS
+========================================================= */
 
 .producto-categoria {
-    /* Bootstrap controla la distribución de columnas */
     display: block;
-
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto 70px;
     padding: 30px;
@@ -311,20 +323,277 @@ footer img {
 .producto-texto li {
     font-size: 18px;
     margin-bottom: 10px;
+    line-height: 1.5;
 }
+
+/*
+   IMPORTANTE:
+   No establecer width aquí.
+   Bootstrap controla el ancho de .col-md-6.
+*/
+
+.producto-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    padding: 15px;
+}
+
+/* Marco de la imagen */
 
 .producto-imagen img {
     display: block;
     width: 100%;
+    max-width: 480px;
     height: auto;
-    max-height: 350px;
+    max-height: 300px;
+    padding: 8px;
     object-fit: contain;
-    border-radius: 20px;
+    object-position: center;
+    background-color: rgba(255, 255, 255, 0.55);
+    border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+    animation: aparecerImagen 1s ease both;
 }
 
 
-/* RESPONSIVE TABLETS */
+/* =========================================================
+   10. PEDIDOS Y CONTACTO
+========================================================= */
+
+main > section {
+    margin-bottom: 50px;
+}
+
+main > section > h2 {
+    text-align: center;
+    color: #7C5653;
+    margin-bottom: 25px;
+}
+
+/* Formularios */
+
+main form {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.82);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+main form label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+main form input,
+main form select,
+main form textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #B9A29A;
+    border-radius: 7px;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+}
+
+main form textarea {
+    resize: vertical;
+}
+
+main form input:focus,
+main form select:focus,
+main form textarea:focus {
+    outline: none;
+    border-color: #7C5653;
+    box-shadow: 0 0 0 3px rgba(124, 86, 83, 0.15);
+}
+
+/* Botones */
+
+main form button,
+main form .btn-pedido {
+    display: block;
+    width: fit-content;
+    min-width: 180px;
+    margin: 25px auto 0;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #7C5653;
+    color: #FFFFFF;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+main form button:hover,
+main form .btn-pedido:hover {
+    background-color: #5E3E3B;
+    color: #FFFFFF;
+    animation: resaltarBoton 0.3s ease forwards;
+}
+
+/* Información de contacto */
+
+main > section p {
+    line-height: 1.7;
+}
+
+main > section a {
+    color: #7C5653;
+    overflow-wrap: anywhere;
+}
+
+main > section a:hover {
+    color: #5E3E3B;
+}
+
+
+/* =========================================================
+   11. FOOTER
+========================================================= */
+
+footer {
+    display: block;
+    width: 100%;
+    background-color: #7C5653;
+    color: #FFFFFF;
+    padding: 50px 40px;
+}
+
+footer h2,
+footer h3 {
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+footer img {
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+
+footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+footer a:hover {
+    color: #F3E4D0;
+    text-decoration: underline;
+}
+
+.footer-col {
+    text-align: center;
+}
+
+/* Compatibilidad con el footer antiguo de Contacto */
+
+footer:not(:has(.container-fluid)) {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    gap: 30px;
+}
+
+footer:not(:has(.container-fluid)) > div {
+    min-width: 0;
+    text-align: center;
+}
+
+
+/* =========================================================
+   12. ANIMACIONES ADICIONALES
+========================================================= */
+
+/* Animación 2: aparición del logotipo */
+
+@keyframes aparecerLogo {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación 3: aparición de los títulos */
+
+@keyframes aparecerTitulo {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación 4: aparición de las categorías */
+
+@keyframes aparecerCategoria {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación 5: aparición de las imágenes */
+
+@keyframes aparecerImagen {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animación 6: movimiento del botón */
+
+@keyframes resaltarBoton {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-3px);
+    }
+}
+
+
+/* =========================================================
+   13. RESPONSIVE - TABLETS
+========================================================= */
 
 @media (max-width: 1024px) {
 
@@ -332,44 +601,82 @@ footer img {
         padding: 30px;
     }
 
-    nav a {
-        margin: 0 10px;
+    .slider {
+        height: 550px;
     }
 
-    .categorias {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+    .categorias article img {
+        height: 250px;
     }
 
-    .productos-destacados {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+    .nosotros-bloque,
+    .producto-categoria {
+        padding: 20px;
+    }
+
+    .nosotros-imagen img {
+        height: 320px;
     }
 
     footer {
-        gap: 30px;
+        padding: 40px 25px;
     }
 }
 
 
-/* RESPONSIVE CELULARES */
+/* =========================================================
+   14. RESPONSIVE - MENÚ
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    header .navbar .container-fluid {
+        justify-content: flex-start;
+    }
+
+    header .navbar-collapse {
+        width: 100%;
+        text-align: left;
+    }
+
+    header .navbar-nav {
+        gap: 5px;
+        padding-top: 15px;
+    }
+
+    header .navbar .nav-link {
+        margin: 0;
+        padding: 8px 5px;
+    }
+
+    header nav:not(.navbar) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    header nav:not(.navbar) a {
+        margin: 0;
+    }
+}
+
+
+/* =========================================================
+   15. RESPONSIVE - CELULARES
+========================================================= */
 
 @media (max-width: 768px) {
-
-    /* BODY */
 
     body {
         background-attachment: scroll;
     }
 
-
-    /* HEADER */
-
     header {
         padding: 15px;
     }
 
-    header img {
+    header > img {
         width: 120px;
     }
 
@@ -377,70 +684,36 @@ footer img {
         font-size: 24px;
     }
 
-
-    /* MENÚ */
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-
-    nav a {
-        margin: 0;
-    }
-
-
-    /* CONTENIDO */
-
     main {
         padding: 20px;
     }
 
-    main h1 {
+    main > h1 {
         font-size: 28px;
     }
 
+    /* Carrusel */
 
-    /* CATEGORÍAS */
+    .slider {
+        height: 400px;
+        margin-bottom: 50px;
+    }
+
+    /* Categorías */
 
     .categorias {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        margin-bottom: 50px;
     }
 
     .categorias article img {
         height: 300px;
     }
 
-
-    /* PRODUCTOS DESTACADOS */
-
-    .productos-destacados {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-
-    /* SLIDER */
-
-    .slider {
-        height: 400px;
-    }
-
-    .imagenes img {
-        height: 400px;
-    }
-
-
-    /* NOSOTROS */
+    /* Nosotros */
 
     .nosotros-bloque {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 20px;
-        margin-bottom: 50px;
+        padding: 15px;
+        margin-bottom: 45px;
     }
 
     .nosotros-texto {
@@ -459,41 +732,71 @@ footer img {
         height: 300px;
     }
 
-
-    /* PRODUCTOS */
+    /* Productos */
 
     .producto-categoria {
-        display: block;
-        padding: 20px;
-        margin-bottom: 50px;
+        padding: 15px;
+        margin-bottom: 45px;
     }
 
     .producto-texto {
         text-align: left;
     }
 
-    .producto-imagen img {
-        width: 100%;
-        height: auto;
-        max-height: 300px;
-        object-fit: contain;
+    .producto-texto li {
+        font-size: 16px;
     }
 
+    .producto-imagen {
+        padding: 10px;
+    }
 
-    /* FOOTER */
+    .producto-imagen img {
+        max-width: 420px;
+        max-height: 250px;
+    }
+
+    /* Formularios */
+
+    main form {
+        padding: 20px;
+    }
+
+    /* Footer */
 
     footer {
-        flex-direction: column;
-        text-align: center;
         padding: 40px 20px;
-        gap: 30px;
-    }
-
-    footer div {
-        width: 100%;
     }
 
     footer img {
         width: 120px;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    /* Footer antiguo */
+
+    footer:not(:has(.container-fluid)) {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+
+/* =========================================================
+   16. ACCESIBILIDAD
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *:not(.imagenes),
+    *:not(.imagenes)::before,
+    *:not(.imagenes)::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
