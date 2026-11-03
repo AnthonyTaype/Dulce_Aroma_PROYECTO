@@ -6,69 +6,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Inicio | Dulce Aroma</title>
+
     <!-- Bootstrap 5.3.8 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
         crossorigin="anonymous">
 
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>Dulce Aroma</title>
-
     <!-- Fuentes personalizadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
 
-    <!-- HEADER -->
+    <!-- ACCESIBILIDAD: ENLACE PARA SALTAR AL CONTENIDO -->
+    <a href="#contenidoPrincipal" class="visually-hidden-focusable">
+        Saltar al contenido principal
+    </a>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
     <header>
 
-        <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
+        <img src="img/logo.webp"
+            alt="Logotipo de Dulce Aroma">
 
         <h1>Los mejores productos de Panadería y Pastelería</h1>
 
+
         <!-- MENÚ RESPONSIVE BOOTSTRAP -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <nav class="navbar navbar-expand-lg navbar-dark"
+            aria-label="Navegación principal">
 
             <div class="container-fluid justify-content-start">
 
-                <button class="navbar-toggler" type="button"
+                <button class="navbar-toggler"
+                    type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#menuPrincipal"
                     aria-controls="menuPrincipal"
                     aria-expanded="false"
-                    aria-label="Abrir menú de navegación">
+                    aria-label="Abrir o cerrar el menú de navegación">
 
                     <span class="navbar-toggler-icon"></span>
 
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-center" id="menuPrincipal">
+
+                <div class="collapse navbar-collapse justify-content-center"
+                    id="menuPrincipal">
 
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
+
+                            <a class="nav-link active"
+                                href="index.html"
+                                aria-current="page">
+                                Inicio
+                            </a>
+
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+
+                            <a class="nav-link" href="nosotros.html">
+                                Nosotros
+                            </a>
+
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="productos.html">Productos</a>
+
+                            <a class="nav-link" href="productos.html">
+                                Productos
+                            </a>
+
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="pedidos.html">Pedidos</a>
+
+                            <a class="nav-link" href="pedidos.html">
+                                Pedidos
+                            </a>
+
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
+
+                            <a class="nav-link" href="contacto.html">
+                                Contacto
+                            </a>
+
                         </li>
 
                     </ul>
@@ -81,72 +123,164 @@
 
     </header>
 
-    <main>
 
-        <!-- SLIDER -->
-        <section class="slider">
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
 
-            <div class="imagenes">
+    <main id="contenidoPrincipal" tabindex="-1">
 
-                <img src="img/BANNERS/banner1.webp" alt="Pan artesanal">
-                <img src="img/BANNERS/banner2.webp" alt="Torta de chocolate">
-                <img src="img/BANNERS/banner3.webp" alt="Pionono">
-                <img src="img/BANNERS/banner4.webp" alt="Panadería">
+
+        <!-- =================================================
+             CARRUSEL DE IMÁGENES
+        ================================================== -->
+
+        <section class="slider"
+            aria-label="Productos destacados"
+            aria-roledescription="carrusel">
+
+            <div class="imagenes" id="pistasCarrusel">
+
+                <img src="img/BANNERS/banner1.webp"
+                    alt="Pan artesanal recién horneado">
+
+                <img src="img/BANNERS/banner2.webp"
+                    alt="Torta de chocolate">
+
+                <img src="img/BANNERS/banner3.webp"
+                    alt="Pionono dulce">
+
+                <img src="img/BANNERS/banner4.webp"
+                    alt="Variedad de productos de panadería">
 
             </div>
 
+
+            <!-- CONTROL PARA PAUSAR Y REANUDAR EL CARRUSEL -->
+
+            <button type="button"
+                class="btn btn-light btn-sm position-absolute bottom-0 end-0 m-3"
+                id="controlCarrusel"
+                aria-controls="pistasCarrusel"
+                aria-pressed="false">
+
+                Pausar carrusel
+
+            </button>
+
         </section>
 
-        <!-- CATEGORÍAS CON BOOTSTRAP -->
-        <section class="categorias">
 
-            <h2>Nuestras categorías</h2>
+        <!-- =================================================
+             CATEGORÍAS
+        ================================================== -->
+
+        <section class="categorias"
+            aria-labelledby="tituloCategorias">
+
+            <h2 id="tituloCategorias">
+                Nuestras categorías
+            </h2>
+
 
             <div class="row g-4">
 
-                <article class="col-12 col-md-6 col-lg-3">
 
-                    <h3>Panadería</h3>
+                <!-- PANADERÍA -->
+
+                <article class="col-12 col-md-6 col-lg-3"
+                    aria-labelledby="tituloPanaderia">
+
+                    <h3 id="tituloPanaderia">
+                        Panadería
+                    </h3>
 
                     <img src="img/CATEGORIAS/categoria1.webp"
-                        alt="Productos de panadería">
+                        alt="Variedad de panes artesanales">
 
-                    <p>Pan artesanal y productos recién horneados.</p>
+                    <p>
+                        Pan artesanal y productos recién horneados.
+                    </p>
+
+                    <a href="productos.html"
+                        class="btn btn-outline-dark btn-sm mt-2">
+                        Ver productos de panadería
+                    </a>
 
                 </article>
 
-                <article class="col-12 col-md-6 col-lg-3">
 
-                    <h3>Pastelería</h3>
+                <!-- PASTELERÍA -->
+
+                <article class="col-12 col-md-6 col-lg-3"
+                    aria-labelledby="tituloPasteleria">
+
+                    <h3 id="tituloPasteleria">
+                        Pastelería
+                    </h3>
 
                     <img src="img/CATEGORIAS/categoria2.webp"
-                        alt="Productos de pastelería">
+                        alt="Tortas y pasteles de Dulce Aroma">
 
-                    <p>Tortas y pasteles preparados para cada ocasión.</p>
+                    <p>
+                        Tortas y pasteles preparados para cada ocasión.
+                    </p>
+
+                    <a href="productos.html"
+                        class="btn btn-outline-dark btn-sm mt-2">
+                        Ver productos de pastelería
+                    </a>
 
                 </article>
 
-                <article class="col-12 col-md-6 col-lg-3">
 
-                    <h3>Postres</h3>
+                <!-- POSTRES -->
+
+                <article class="col-12 col-md-6 col-lg-3"
+                    aria-labelledby="tituloPostres">
+
+                    <h3 id="tituloPostres">
+                        Postres
+                    </h3>
 
                     <img src="img/CATEGORIAS/categoria3.webp"
-                        alt="Postres de Dulce Aroma">
+                        alt="Postres variados de Dulce Aroma">
 
-                    <p>Deliciosos postres para disfrutar en cualquier momento.</p>
+                    <p>
+                        Deliciosos postres para disfrutar en cualquier momento.
+                    </p>
+
+                    <a href="productos.html"
+                        class="btn btn-outline-dark btn-sm mt-2">
+                        Ver productos dulces
+                    </a>
 
                 </article>
 
-                <article class="col-12 col-md-6 col-lg-3">
 
-                    <h3>Bocaditos</h3>
+                <!-- BOCADITOS -->
+
+                <article class="col-12 col-md-6 col-lg-3"
+                    aria-labelledby="tituloBocaditos">
+
+                    <h3 id="tituloBocaditos">
+                        Bocaditos
+                    </h3>
 
                     <img src="img/CATEGORIAS/categoria4.webp"
-                        alt="Bocaditos de Dulce Aroma">
+                        alt="Variedad de pequeños bocaditos">
 
-                    <p>Pequeños sabores ideales para compartir.</p>
+                    <p>
+                        Pequeños sabores ideales para compartir.
+                    </p>
+
+                    <a href="productos.html"
+                        class="btn btn-outline-dark btn-sm mt-2">
+                        Ver productos para compartir
+                    </a>
 
                 </article>
+
 
             </div>
 
@@ -154,53 +288,82 @@
 
     </main>
 
-    <!-- FOOTER CON BOOTSTRAP -->
-    <footer>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer aria-label="Información de Dulce Aroma">
 
         <div class="container-fluid">
 
             <div class="row g-4">
 
+
                 <!-- LOGOTIPO -->
+
                 <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
-                    <img src="img/logo.webp" alt="Logotipo de Dulce Aroma">
+                    <img src="img/logo.webp"
+                        alt="Logotipo de Dulce Aroma">
 
                 </div>
 
+
                 <!-- DESCRIPCIÓN -->
+
                 <div class="col-12 col-sm-6 col-lg-3 footer-col">
+
+                    <h2>Dulce Aroma</h2>
 
                     <p>Panadería y Pastelería</p>
 
-                    <p>Elaboramos productos frescos <br>
-                        para compartir en momentos especiales.</p>
+                    <p>
+                        Elaboramos productos frescos
+                        <br>
+                        para compartir en momentos especiales.
+                    </p>
 
                 </div>
 
+
                 <!-- HORARIOS -->
+
                 <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
                     <h3>Horario de Atención</h3>
 
-                    <p>Lunes a Sábado: 7:00 AM - 8:00 PM</p>
+                    <p>
+                        Lunes a Sábado: 7:00 AM - 8:00 PM
+                    </p>
 
-                    <p>Domingo: 8:00 AM - 2:00 PM</p>
+                    <p>
+                        Domingo: 8:00 AM - 2:00 PM
+                    </p>
 
                 </div>
 
+
                 <!-- CONTACTO -->
+
                 <div class="col-12 col-sm-6 col-lg-3 footer-col">
 
                     <h3>Central de Pedidos</h3>
 
-                    <p>Teléfono:
-                        <a href="tel:+51777777777">777-777-777</a>
+                    <p>
+                        Teléfono:
+                        <a href="tel:+51777777777">
+                            777-777-777
+                        </a>
                     </p>
 
-                    <p>WhatsApp:
+                    <p>
+                        WhatsApp:
                         <a href="https://wa.me/51777777777"
-                            target="_blank" rel="noopener noreferrer">777-777-777</a>
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            777-777-777
+                        </a>
                     </p>
 
                     <p>
@@ -209,7 +372,8 @@
                         </a>
                     </p>
 
-                </div>|
+                </div>
+
 
             </div>
 
@@ -217,10 +381,83 @@
 
     </footer>
 
-    <!-- Bootstrap 5.3.8 JavaScript -->
+
+    <!-- =====================================================
+         BOOTSTRAP JAVASCRIPT
+    ====================================================== -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+
+    <!-- =====================================================
+         CONTROL ACCESIBLE DEL CARRUSEL
+    ====================================================== -->
+
+    <script>
+
+        const carrusel = document.querySelector(".imagenes");
+        const botonCarrusel = document.querySelector("#controlCarrusel");
+
+        const preferenciaMovimiento = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
+
+        let carruselPausado = preferenciaMovimiento.matches;
+
+
+        // Actualizar el estado visual y accesible del control
+
+        function actualizarCarrusel() {
+
+            carrusel.style.animationPlayState =
+                carruselPausado ? "paused" : "running";
+
+            botonCarrusel.textContent =
+                carruselPausado
+                    ? "Reanudar carrusel"
+                    : "Pausar carrusel";
+
+            botonCarrusel.setAttribute(
+                "aria-pressed",
+                String(carruselPausado)
+            );
+
+        }
+
+
+        // Estado inicial del carrusel
+
+        actualizarCarrusel();
+
+
+        // Pausar o reanudar mediante el botón
+
+        botonCarrusel.addEventListener("click", function () {
+
+            carruselPausado = !carruselPausado;
+
+            actualizarCarrusel();
+
+        });
+
+
+        // Respetar los cambios en la preferencia de movimiento
+
+        preferenciaMovimiento.addEventListener("change", function (evento) {
+
+            if (evento.matches) {
+
+                carruselPausado = true;
+
+                actualizarCarrusel();
+
+            }
+
+        });
+
+    </script>
 
 </body>
 </html>

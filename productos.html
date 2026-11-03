@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -25,6 +24,11 @@
 
 <body>
 
+    <!-- ENLACE PARA SALTAR AL CONTENIDO PRINCIPAL -->
+    <a href="#contenidoPrincipal" class="visually-hidden-focusable">
+        Saltar al contenido principal
+    </a>
+
     <!-- HEADER -->
     <header>
 
@@ -33,7 +37,8 @@
         <h1>Panadería y Pastelería</h1>
 
         <!-- MENÚ RESPONSIVE BOOTSTRAP -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark"
+            aria-label="Navegación principal">
 
             <div class="container-fluid justify-content-start">
 
@@ -42,7 +47,7 @@
                     data-bs-target="#menuPrincipal"
                     aria-controls="menuPrincipal"
                     aria-expanded="false"
-                    aria-label="Abrir menú de navegación">
+                    aria-label="Abrir o cerrar el menú de navegación">
 
                     <span class="navbar-toggler-icon"></span>
 
@@ -85,11 +90,11 @@
     </header>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main>
+    <main id="contenidoPrincipal" tabindex="-1">
 
         <div class="container-fluid">
 
-            <h1>Nuestros Productos</h1>
+            <h1 id="tituloProductos">Nuestros Productos</h1>
 
             <p class="text-center">
                 En Dulce Aroma encontrarás una variedad de productos
@@ -97,13 +102,14 @@
             </p>
 
             <!-- PANADERÍA -->
-            <section class="producto-categoria">
+            <section class="producto-categoria"
+                aria-labelledby="tituloPanaderia">
 
                 <div class="row align-items-center g-4">
 
                     <div class="col-12 col-md-6 producto-texto">
 
-                        <h2>Panadería</h2>
+                        <h2 id="tituloPanaderia">Panadería</h2>
 
                         <ul>
                             <li>Pan francés</li>
@@ -117,7 +123,9 @@
                     <div class="col-12 col-md-6 producto-imagen">
 
                         <img src="img/PRODUCTOS/productos1.webp"
-                            alt="Variedad de panes">
+                            alt="Variedad de panes de Dulce Aroma"
+                            loading="lazy"
+                            decoding="async">
 
                     </div>
 
@@ -126,13 +134,14 @@
             </section>
 
             <!-- PASTELERÍA -->
-            <section class="producto-categoria">
+            <section class="producto-categoria"
+                aria-labelledby="tituloPasteleria">
 
                 <div class="row align-items-center g-4">
 
                     <div class="col-12 col-md-6 producto-texto">
 
-                        <h2>Pastelería</h2>
+                        <h2 id="tituloPasteleria">Pastelería</h2>
 
                         <ul>
                             <li>Torta de chocolate</li>
@@ -146,7 +155,9 @@
                     <div class="col-12 col-md-6 producto-imagen">
 
                         <img src="img/PRODUCTOS/productos2.webp"
-                            alt="Variedad de tortas">
+                            alt="Variedad de tortas y pasteles"
+                            loading="lazy"
+                            decoding="async">
 
                     </div>
 
@@ -155,13 +166,14 @@
             </section>
 
             <!-- PRODUCTOS DULCES -->
-            <section class="producto-categoria">
+            <section class="producto-categoria"
+                aria-labelledby="tituloProductosDulces">
 
                 <div class="row align-items-center g-4">
 
                     <div class="col-12 col-md-6 producto-texto">
 
-                        <h2>Productos Dulces</h2>
+                        <h2 id="tituloProductosDulces">Productos Dulces</h2>
 
                         <ul>
                             <li>Pionono</li>
@@ -175,7 +187,9 @@
                     <div class="col-12 col-md-6 producto-imagen">
 
                         <img src="img/PRODUCTOS/productos3.webp"
-                            alt="Pionono, alfajores, brownies y cupcakes">
+                            alt="Pionono, alfajores, brownies y cupcakes"
+                            loading="lazy"
+                            decoding="async">
 
                     </div>
 
@@ -184,13 +198,14 @@
             </section>
 
             <!-- PRODUCTOS SALADOS -->
-            <section class="producto-categoria">
+            <section class="producto-categoria"
+                aria-labelledby="tituloProductosSalados">
 
                 <div class="row align-items-center g-4">
 
                     <div class="col-12 col-md-6 producto-texto">
 
-                        <h2>Productos Salados</h2>
+                        <h2 id="tituloProductosSalados">Productos Salados</h2>
 
                         <ul>
                             <li>Empanada de carne</li>
@@ -204,7 +219,9 @@
                     <div class="col-12 col-md-6 producto-imagen">
 
                         <img src="img/PRODUCTOS/productos4.webp"
-                            alt="Empanadas y pastel de pollo">
+                            alt="Empanadas y pastel de pollo"
+                            loading="lazy"
+                            decoding="async">
 
                     </div>
 
@@ -217,7 +234,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer>
+    <footer aria-label="Información de Dulce Aroma">
 
         <div class="container-fluid">
 
