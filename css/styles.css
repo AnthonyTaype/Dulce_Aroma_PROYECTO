@@ -7,13 +7,25 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
 body {
+    width: 100%;
     margin: 0;
-    font-family: "Lato", sans-serif;
+    overflow-x: hidden;
+    overflow-x: clip;
+
+    font-family: "Poppins", sans-serif;
+
     background-image: url("../img/fondo4.webp");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
     color: #33251F;
 }
 
@@ -45,6 +57,7 @@ header > img {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+
     animation: aparecerLogo 1s ease both;
 }
 
@@ -55,7 +68,7 @@ header h1 {
 
 
 /* =========================================================
-   3. MENÚ DE NAVEGACIÓN
+   3. MENÚ DE NAVEGACIÓN - BOOTSTRAP
 ========================================================= */
 
 header .navbar {
@@ -76,38 +89,44 @@ header .navbar-toggler:focus {
 }
 
 header .navbar-nav {
-    gap: 20px;
+    gap: 12px;
 }
 
-header .navbar .nav-link {
+header .navbar.navbar-dark .navbar-nav .nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 43px;
+    padding: 9px 18px;
+    margin: 0;
+
+    border: 1px solid rgba(243, 228, 208, 0.75);
+    border-radius: 10px;
+
+    background-color: rgba(255, 255, 255, 0.06);
+
     color: #FFFFFF;
-    font-weight: 700;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
 
-header .navbar .nav-link:hover,
-header .navbar .nav-link.active {
-    color: #F3E4D0;
-}
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
 
-/* Navegación HTML antigua */
-
-header nav:not(.navbar) {
-    margin-top: 15px;
-}
-
-header nav:not(.navbar) a {
-    display: inline-block;
-    color: #FFFFFF;
     text-decoration: none;
-    margin: 0 20px;
-    font-weight: 700;
-    transition: color 0.3s ease;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-header nav:not(.navbar) a:hover {
-    color: #F3E4D0;
+header .navbar.navbar-dark .navbar-nav .nav-link.active {
+    background-color: #F3E4D0;
+    border-color: #F3E4D0;
+    color: #7C5653;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -122,15 +141,16 @@ main {
     padding: 30px 40px;
 }
 
-main > h1 {
+main h1 {
     text-align: center;
     color: #33251F;
     margin-bottom: 25px;
+
     animation: aparecerTitulo 0.8s ease both;
 }
 
 main > p {
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 
@@ -140,51 +160,40 @@ main > p {
 
 .slider {
     position: relative;
+
     width: 100vw;
     height: 700px;
+
     margin-left: calc(50% - 50vw);
     margin-bottom: 70px;
+
     overflow: hidden;
 }
 
 .imagenes {
     display: flex;
+
     width: 400%;
     height: 100%;
+
     animation: cambiar 20s infinite;
     will-change: transform;
 }
 
 .imagenes img {
     display: block;
+
     flex: 0 0 25%;
     width: 25%;
     height: 100%;
+
+    max-width: none;
+
     object-fit: cover;
 }
 
-/* Animación 1: movimiento automático del carrusel */
-
-@keyframes cambiar {
-    0%, 20% {
-        transform: translateX(0);
-    }
-
-    25%, 45% {
-        transform: translateX(-25%);
-    }
-
-    50%, 70% {
-        transform: translateX(-50%);
-    }
-
-    75%, 95% {
-        transform: translateX(-75%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+.slider > button {
+    z-index: 2;
 }
 
 
@@ -195,21 +204,44 @@ main > p {
 .categorias {
     display: block;
     width: 100%;
+
     margin-bottom: 70px;
 }
 
 .categorias > h2 {
     text-align: center;
     color: #7C5653;
+
     margin-bottom: 35px;
 }
 
 .categorias article {
+    min-width: 0;
+
     background-color: transparent;
+
     padding: 0 12px;
     margin: 0;
+
     text-align: center;
+
     animation: aparecerCategoria 0.8s ease both;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.categorias article:nth-of-type(2) {
+    animation-delay: 0.10s;
+}
+
+.categorias article:nth-of-type(3) {
+    animation-delay: 0.20s;
+}
+
+.categorias article:nth-of-type(4) {
+    animation-delay: 0.30s;
 }
 
 .categorias article h3 {
@@ -219,21 +251,33 @@ main > p {
 
 .categorias article img {
     display: block;
+
     width: 100%;
     height: 280px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
-    transition: transform 0.4s ease;
-}
 
-.categorias article img:hover {
-    transform: scale(1.04);
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
 }
 
 .categorias article p {
     margin-top: 18px;
-    line-height: 1.5;
+    line-height: 1.7;
+}
+
+.categorias article a {
+    font-family: "Poppins", sans-serif;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 
@@ -260,10 +304,30 @@ main > p {
 
 .nosotros-bloque {
     display: block;
+
     width: 100%;
     max-width: 1200px;
+
     margin: 0 auto 70px;
     padding: 30px;
+
+    animation: deslizarBloque 0.9s ease both;
+}
+
+.nosotros-bloque:nth-of-type(3) {
+    animation-delay: 0.10s;
+}
+
+.nosotros-bloque:nth-of-type(4) {
+    animation-delay: 0.20s;
+}
+
+.nosotros-bloque:nth-of-type(5) {
+    animation-delay: 0.30s;
+}
+
+.nosotros-bloque:nth-of-type(6) {
+    animation-delay: 0.40s;
 }
 
 .nosotros-texto {
@@ -277,21 +341,26 @@ main > p {
 
 .nosotros-texto p {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .nosotros-texto ul {
     line-height: 1.8;
 }
 
+/* Imágenes de Nosotros */
+
 .nosotros-imagen img {
     display: block;
+
     width: 100%;
     height: 350px;
+
     object-fit: cover;
+
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
-    animation: aparecerImagen 1s ease both;
+
+    animation: aparecerImagen 1s ease;
 }
 
 
@@ -301,8 +370,10 @@ main > p {
 
 .producto-categoria {
     display: block;
+
     width: 100%;
     max-width: 1200px;
+
     margin: 0 auto 70px;
     padding: 30px;
 }
@@ -323,43 +394,62 @@ main > p {
 .producto-texto li {
     font-size: 18px;
     margin-bottom: 10px;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
-/*
-   IMPORTANTE:
-   No establecer width aquí.
-   Bootstrap controla el ancho de .col-md-6.
-*/
+/* Bootstrap controla el ancho mediante .col-md-6 */
 
 .producto-imagen {
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     min-width: 0;
     padding: 15px;
 }
 
-/* Marco de la imagen */
+/* Imágenes de Productos */
 
 .producto-imagen img {
     display: block;
+
     width: 100%;
     max-width: 480px;
+
     height: auto;
     max-height: 300px;
+
     padding: 8px;
+
     object-fit: contain;
     object-position: center;
+
     background-color: rgba(255, 255, 255, 0.55);
+
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
-    animation: aparecerImagen 1s ease both;
+
+    animation: aparecerImagen 1s ease;
 }
 
 
 /* =========================================================
-   10. PEDIDOS Y CONTACTO
+   10. SOMBREADO UNIFICADO DE IMÁGENES
+========================================================= */
+
+.nosotros-imagen img,
+.producto-imagen img {
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* =========================================================
+   11. PEDIDOS Y CONTACTO
 ========================================================= */
 
 main > section {
@@ -377,17 +467,26 @@ main > section > h2 {
 main form {
     width: 100%;
     max-width: 700px;
+
     margin: 0 auto;
     padding: 30px;
+
     background-color: rgba(255, 255, 255, 0.82);
+
     border-radius: 15px;
+
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    animation: entradaFormulario 0.8s ease both;
 }
 
 main form label {
     display: inline-block;
+
     margin-bottom: 8px;
-    font-weight: 700;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
 }
 
 main form input,
@@ -395,11 +494,14 @@ main form select,
 main form textarea {
     width: 100%;
     max-width: 100%;
+
     padding: 10px;
+
     border: 1px solid #B9A29A;
     border-radius: 7px;
-    font-family: "Lato", sans-serif;
-    font-size: 16px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
 }
 
 main form textarea {
@@ -410,39 +512,59 @@ main form input:focus,
 main form select:focus,
 main form textarea:focus {
     outline: none;
+
     border-color: #7C5653;
+
     box-shadow: 0 0 0 3px rgba(124, 86, 83, 0.15);
 }
 
-/* Botones */
+main form .form-text {
+    color: #66534D;
+    margin-top: 6px;
+}
+
+.pedido-seccion + .pedido-seccion {
+    margin-top: 30px;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(124, 86, 83, 0.25);
+}
+
+.pedido-seccion h2 {
+    color: #7C5653;
+    text-align: center;
+
+    margin-bottom: 25px;
+}
 
 main form button,
 main form .btn-pedido {
     display: block;
+
     width: fit-content;
     min-width: 180px;
+
     margin: 25px auto 0;
     padding: 12px 25px;
+
     border: none;
     border-radius: 8px;
+
     background-color: #7C5653;
     color: #FFFFFF;
-    font-family: "Lato", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
     cursor: pointer;
-    transition: background-color 0.3s ease,
-                transform 0.3s ease;
-}
 
-main form button:hover,
-main form .btn-pedido:hover {
-    background-color: #5E3E3B;
-    color: #FFFFFF;
-    animation: resaltarBoton 0.3s ease forwards;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
-
-/* Información de contacto */
 
 main > section p {
     line-height: 1.7;
@@ -451,6 +573,8 @@ main > section p {
 main > section a {
     color: #7C5653;
     overflow-wrap: anywhere;
+
+    transition: color 0.3s ease;
 }
 
 main > section a:hover {
@@ -459,14 +583,17 @@ main > section a:hover {
 
 
 /* =========================================================
-   11. FOOTER
+   12. FOOTER
 ========================================================= */
 
 footer {
     display: block;
+
     width: 100%;
+
     background-color: #7C5653;
     color: #FFFFFF;
+
     padding: 50px 40px;
 }
 
@@ -478,20 +605,25 @@ footer h3 {
 
 footer p {
     margin: 8px 0;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
 footer img {
     display: block;
+
     width: 150px;
     height: auto;
+
     margin: 0 auto;
 }
 
 footer a {
     color: #FFFFFF;
+
     text-decoration: none;
     overflow-wrap: anywhere;
+
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
@@ -503,28 +635,40 @@ footer a:hover {
     text-align: center;
 }
 
-/* Compatibilidad con el footer antiguo de Contacto */
-
-footer:not(:has(.container-fluid)) {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    align-items: center;
-    gap: 30px;
-}
-
-footer:not(:has(.container-fluid)) > div {
-    min-width: 0;
-    text-align: center;
-}
-
 
 /* =========================================================
-   12. ANIMACIONES ADICIONALES
+   13. ANIMACIONES CSS
 ========================================================= */
+
+/* Animación 1: movimiento del carrusel */
+
+@keyframes cambiar {
+
+    0%, 20% {
+        transform: translateX(0);
+    }
+
+    25%, 45% {
+        transform: translateX(-25%);
+    }
+
+    50%, 70% {
+        transform: translateX(-50%);
+    }
+
+    75%, 95% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
 
 /* Animación 2: aparición del logotipo */
 
 @keyframes aparecerLogo {
+
     from {
         opacity: 0;
         transform: translateY(-20px);
@@ -539,6 +683,7 @@ footer:not(:has(.container-fluid)) > div {
 /* Animación 3: aparición de los títulos */
 
 @keyframes aparecerTitulo {
+
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -553,6 +698,7 @@ footer:not(:has(.container-fluid)) > div {
 /* Animación 4: aparición de las categorías */
 
 @keyframes aparecerCategoria {
+
     from {
         opacity: 0;
         transform: translateY(25px);
@@ -567,6 +713,7 @@ footer:not(:has(.container-fluid)) > div {
 /* Animación 5: aparición de las imágenes */
 
 @keyframes aparecerImagen {
+
     from {
         opacity: 0;
         transform: scale(0.96);
@@ -581,6 +728,7 @@ footer:not(:has(.container-fluid)) > div {
 /* Animación 6: movimiento del botón */
 
 @keyframes resaltarBoton {
+
     from {
         transform: translateY(0);
     }
@@ -590,9 +738,152 @@ footer:not(:has(.container-fluid)) > div {
     }
 }
 
+/* Animación 7: desplazamiento de los bloques de Nosotros */
+
+@keyframes deslizarBloque {
+
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animación 8: aparición del formulario */
+
+@keyframes entradaFormulario {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación 9: elevación de las tarjetas de categorías */
+
+@keyframes elevarCategoria {
+
+    from {
+        transform: translateY(0);
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+    }
+
+    to {
+        transform: translateY(-6px);
+        filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.18));
+    }
+}
+
+/* Animación 10: movimiento de los botones del menú */
+
+@keyframes animacionMenu {
+
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    65% {
+        transform: translateY(-4px) scale(1.04);
+    }
+
+    100% {
+        transform: translateY(-2px) scale(1.02);
+    }
+}
+
 
 /* =========================================================
-   13. RESPONSIVE - TABLETS
+   14. EFECTOS INTERACTIVOS
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    /* Animación del menú */
+
+    header .navbar.navbar-dark .navbar-nav .nav-link:hover {
+        background-color: #F3E4D0;
+        border-color: #F3E4D0;
+        color: #7C5653;
+
+        animation: animacionMenu 0.3s ease both;
+
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    /* Elevación de las categorías */
+
+    .categorias article:hover {
+        animation: elevarCategoria 0.35s ease both;
+    }
+
+    /* Zoom de las imágenes de las categorías */
+
+    .categorias article img:hover {
+        transform: scale(1.04);
+        filter: brightness(1.04);
+    }
+
+    /* Sombreado y movimiento compartido de imágenes */
+
+    .nosotros-imagen img:hover,
+    .producto-imagen img:hover {
+
+        transform: translateY(-3px) scale(1.02);
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Efecto de los enlaces de categoría */
+
+    .categorias article a:hover {
+        transform: translateY(-2px);
+    }
+
+    /* Efecto de los botones de formularios */
+
+    main form button:hover,
+    main form .btn-pedido:hover {
+        background-color: #5E3E3B;
+        color: #FFFFFF;
+
+        animation: resaltarBoton 0.3s ease both;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+    }
+
+}
+
+
+/* =========================================================
+   15. ACCESIBILIDAD Y FOCUS
+========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #C18C55;
+    outline-offset: 3px;
+}
+
+main:focus-visible {
+    outline: 3px solid #C18C55;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   16. RESPONSIVE - TABLETS
 ========================================================= */
 
 @media (max-width: 1024px) {
@@ -621,11 +912,12 @@ footer:not(:has(.container-fluid)) > div {
     footer {
         padding: 40px 25px;
     }
+
 }
 
 
 /* =========================================================
-   14. RESPONSIVE - MENÚ
+   17. RESPONSIVE - MENÚ
 ========================================================= */
 
 @media (max-width: 991.98px) {
@@ -640,30 +932,29 @@ footer:not(:has(.container-fluid)) > div {
     }
 
     header .navbar-nav {
-        gap: 5px;
+        align-items: flex-start;
+        gap: 9px;
         padding-top: 15px;
     }
 
-    header .navbar .nav-link {
-        margin: 0;
-        padding: 8px 5px;
+    header .navbar .nav-item {
+        width: 100%;
     }
 
-    header nav:not(.navbar) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
+    header .navbar.navbar-dark .navbar-nav .nav-link {
+        width: 100%;
+        max-width: 260px;
+        justify-content: flex-start;
+
+        margin: 0;
+        padding: 9px 15px;
     }
 
-    header nav:not(.navbar) a {
-        margin: 0;
-    }
 }
 
 
 /* =========================================================
-   15. RESPONSIVE - CELULARES
+   18. RESPONSIVE - CELULARES
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -688,18 +979,14 @@ footer:not(:has(.container-fluid)) > div {
         padding: 20px;
     }
 
-    main > h1 {
+    main h1 {
         font-size: 28px;
     }
-
-    /* Carrusel */
 
     .slider {
         height: 400px;
         margin-bottom: 50px;
     }
-
-    /* Categorías */
 
     .categorias {
         margin-bottom: 50px;
@@ -708,8 +995,6 @@ footer:not(:has(.container-fluid)) > div {
     .categorias article img {
         height: 300px;
     }
-
-    /* Nosotros */
 
     .nosotros-bloque {
         padding: 15px;
@@ -731,8 +1016,6 @@ footer:not(:has(.container-fluid)) > div {
     .nosotros-imagen img {
         height: 300px;
     }
-
-    /* Productos */
 
     .producto-categoria {
         padding: 15px;
@@ -756,13 +1039,9 @@ footer:not(:has(.container-fluid)) > div {
         max-height: 250px;
     }
 
-    /* Formularios */
-
     main form {
         padding: 20px;
     }
-
-    /* Footer */
 
     footer {
         padding: 40px 20px;
@@ -776,17 +1055,11 @@ footer:not(:has(.container-fluid)) > div {
         text-align: center;
     }
 
-    /* Footer antiguo */
-
-    footer:not(:has(.container-fluid)) {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
 }
 
 
 /* =========================================================
-   16. ACCESIBILIDAD
+   19. ACCESIBILIDAD - MOVIMIENTO REDUCIDO
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -794,9 +1067,14 @@ footer:not(:has(.container-fluid)) > div {
     *:not(.imagenes),
     *:not(.imagenes)::before,
     *:not(.imagenes)::after {
+
         scroll-behavior: auto !important;
+
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+        animation-delay: 0s !important;
+
         transition-duration: 0.01ms !important;
     }
+
 }
