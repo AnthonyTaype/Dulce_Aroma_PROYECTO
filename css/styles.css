@@ -21,9 +21,12 @@ body {
 
     font-family: "Poppins", sans-serif;
 
-    background-image: url("../img/fondo4.webp");
+    /* Fondo artesanal optimizado */
+    background-color: #F7EEE3;
+    background-image: url("../img/fondo5.webp");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 
     color: #33251F;
@@ -61,8 +64,21 @@ header > img {
     animation: aparecerLogo 1s ease both;
 }
 
+/* Título principal de Inicio */
+
 header h1 {
     color: #FFFFFF;
+    margin: 10px 0 5px;
+}
+
+/* Subtítulo del encabezado en las demás páginas */
+
+header .header-subtitle {
+    color: #FFFFFF;
+    font-family: "Playfair Display", serif;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.2;
     margin: 10px 0 5px;
 }
 
@@ -105,7 +121,6 @@ header .navbar.navbar-dark .navbar-nav .nav-link {
     border-radius: 10px;
 
     background-color: rgba(255, 255, 255, 0.06);
-
     color: #FFFFFF;
 
     font-family: "Poppins", sans-serif;
@@ -837,7 +852,7 @@ footer a:hover {
     .nosotros-imagen img:hover,
     .producto-imagen img:hover {
 
-        transform: translateY(-3px) scale(1.02);
+        transform: translateY(-6px) scale(1.02);
 
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
     }
@@ -971,7 +986,8 @@ main:focus-visible {
         width: 120px;
     }
 
-    header h1 {
+    header h1,
+    header .header-subtitle {
         font-size: 24px;
     }
 
